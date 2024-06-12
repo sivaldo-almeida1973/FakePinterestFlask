@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)#nome do projeto
 
@@ -7,9 +7,11 @@ app = Flask(__name__)#nome do projeto
 def homepage():
     return render_template("homepage.html")
 
-@app.route("/perfil")
-def perfil():
-    return render_template("perfil.html")
+
+@app.route("/perfil/<usuario>")#cria uma pagina para cada usuario que acessar
+def perfil(usuario):
+    return render_template("perfil.html", usuario=usuario)
+
 
 #colocar site no ar
 if __name__ == "__main__":
