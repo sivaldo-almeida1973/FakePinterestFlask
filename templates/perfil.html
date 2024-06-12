@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Perfil - FakePinterest</title>
-</head>
-<body>
-    <h1>Perfil do usuário: {{ usuario }}</h1>
+{% extends "homepage.html" %}
+
+{% block titulo %}
+Perfil - {{ usuario }}
+{% endblock %}
+
+
+{% block body %}
+<h1>Perfil do usuário: {{ usuario }}</h1>
 
     <!--link que liga essa pagina a outra-->
-    <a href="{{ url_for('homepage') }}">Sair</a>
-</body>
-</html>
+<a href="{{url_for('homepage') }}">Sair</a>
+{% endblock %}
+
+
+
+
+
