@@ -1,3 +1,4 @@
+#importa o app que esta dentro do __init__
 from fakepinterest import app
 
 #executa o codigo
