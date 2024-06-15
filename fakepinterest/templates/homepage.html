@@ -16,6 +16,7 @@
 
       <p>Esta é a homepage do site</p>
       <!--Post = enviar, fazer mesma coisa routes-->
+      {% block formulario %}
       <form method="POST">
           {{ form.csrf_token }}   <!--form-> esta no routes-->
 
@@ -30,6 +31,7 @@
 
       </form>
 
+    {% endblock %}
 </body>
 {% endblock %}
 
