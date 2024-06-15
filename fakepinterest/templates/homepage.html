@@ -11,10 +11,25 @@
 </head>
 
 {% block body %}
-<body style="background: red">
+<body >
       <h1>FakePinterest - Meu primeiro site no ar!</h1>
 
       <p>Esta é a homepage do site</p>
+      <!--Post = enviar, fazer mesma coisa routes-->
+      <form method="POST">
+          {{ form.csrf_token }}   <!--form-> esta no routes-->
+
+          {{ form.email.label() }}
+          {{ form.email() }}
+
+          {{ form.senha.label() }}
+          {{ form.senha() }}
+
+          {{ form.botao_confirmacao() }}
+
+
+      </form>
+
 </body>
 {% endblock %}
 

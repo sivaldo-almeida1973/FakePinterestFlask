@@ -3,12 +3,19 @@ from flask import render_template, url_for
 #import o app dentro do init
 from fakepinterest import app
 from flask_login import login_required
+from fakepinterest.forms import FormLogin, FormCriarConta
 
-
-#criar servidor local/rota/homepage
-@app.route("/")
+#criar tela login-------
+@app.route("/", methods=["GET", "POST"])
 def homepage():
-    return render_template("homepage.html")
+    formlogin = FormLogin()                 #form = referencia para homepage
+    return render_template("homepage.html", form=formlogin)
+
+#tela criar conta
+@app.route("/criarconta",  methods=["GET", "POST"])
+def criarconta():
+    formcriarconta = FormCriarConta()
+    return render_template('criarconta.html', form=formcriarconta)
 
 
 @app.route("/perfil/<usuario>")#cria uma pagina para cada usuario que acessar
