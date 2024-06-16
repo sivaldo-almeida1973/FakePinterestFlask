@@ -18,7 +18,7 @@
       <!--Post = enviar, fazer mesma coisa routes-->
       {% block formulario %}
       <form method="POST">
-          {{ form.csrf_token }}   <!--form-> esta no routes-->
+          {{ form.csrf_token }}
 
           {{ form.email.label() }}
           {{ form.email() }}
